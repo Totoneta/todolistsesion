@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>TO DO LIST - Inicio</title>
+<link rel="stylesheet" href="{% static 'misnotas.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<section class="misnotaspage">
+
+  <h1>MIS NOTAS</h1>
+
+  {% if notas %}
+  <ul class="notas">
+    {% for nota in notas %}
+    <li class="nota">
+      <h3>{{ nota.titulo }}</h3>
+      <p>{{ nota.descripcion }}</p>
+      <p>Finalizada: {{ nota.finalizada|yesno:"Sí,No" }}</p>
+      <div class="container-btns-card">
+        <a href="{% url 'Editar Notas' nota.id %}">Editar</a>
+
+        <form action="{% url 'Eliminar Notas' nota.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit"
+            onclick="return confirm('¿Estás seguro de que deseas eliminar esta nota?');">Eliminar</button>
+        </form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No tienes notas aún.</p>
+  {% endif %}
+</section>
+
+{% endblock content %}

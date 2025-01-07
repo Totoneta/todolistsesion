@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% block head %}{% endblock head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+
+<body>
+
+    <nav class="nav-container">
+        <ul class="nav-list">
+            {% if user.is_authenticated %}
+            <li class="nav-list-item"><a href="{% url 'Crear Notas' %}">Crear Notas</a></li>
+            <li class="nav-list-item"><a href="{% url 'Mis Notas' %}">Mis notas</a></li>
+            <li class="nav-list-item"><a href="{% url 'Cerrar Sesion' %}">Salir</a></li>
+            {% else %}
+            <li class="nav-list-item"><a href="{% url 'Iniciar Sesion' %}">Iniciar Sesion</a></li>
+            <li class="nav-list-item"><a href="{% url 'Registrarse' %}">Registrarse</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+    <footer class="footer">
+        <h2>TO DO LIST</h2>
+    </footer>
+
+</body>
+
+</html>

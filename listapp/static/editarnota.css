@@ -1,0 +1,88 @@
+.editarnotapage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90dvh;
+}
+
+.form-container-editarnota {
+    margin: 1rem auto;
+    background-color: #6b64ff;
+    width: 60%;
+    height: 70dvh;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 16px;
+    gap: 3rem;
+    color: #fff;
+}
+
+.form-container-editarnota>h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.inputeditar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: start;
+    align-items: center;
+    font-size: 24px;
+    width: 28rem;
+}
+
+.inputeditar>input {
+    padding: .5rem;
+    outline: none;
+}
+
+.btns-container-editar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.btns-container-editar>button,
+.btns-container-editar>a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    padding: .8rem 1.2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btns-container-editar>button:hover,
+.btns-container-editar>a:hover {
+    scale: 105%;
+}
+
+
+/* Mediaquerys 350px a 710px */
+@media (min-width: 350px) and (max-width: 710px) {
+    
+    .form-container-editarnota {
+        width: 95%;
+        height: 80dvh;
+        gap: 2rem;
+    }
+    
+    .form-container-editarnota>h1 {
+        font-size: 40px;
+    }
+    
+    .inputeditar {
+        font-size: 20px;
+        width: 20rem;
+    }
+
+}

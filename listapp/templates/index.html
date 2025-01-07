@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>TO DO LIST - Inicio</title>
+<link rel="stylesheet" href="{% static 'index.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<main class="indexpagecontainer">
+  <h1>¡CREA TUS PROPIAS NOTAS!</h1>
+  
+  <aside class="indexinstrucciones">
+    <img src="{% static 'assets/infoicon.svg' %}" alt="">
+    <span>¡Puedes crear TODAS las notas que gustes!</span>
+  </aside>
+  
+  <form class="formulariocrearnotas" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generar Nota</button>
+  </form>
+</main>
+
+{% endblock content %}

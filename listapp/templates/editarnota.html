@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>Editar Nota</title>
+<link rel="stylesheet" href="{% static 'editarnota.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<section class="editarnotapage">
+    
+    <form class="form-container-editarnota" method="POST">
+        <h1>Editar Nota</h1>
+        {% csrf_token %}
+
+        {% if form.errors %}
+        <div class="error">
+            <p>Por favor, corrige los siguientes errores:</p>
+            <ul>
+                {% for field in form %}
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="inputeditar">
+            <label for="titulo">Título</label>
+            {{ form.titulo }}
+        </div>
+
+        <div class="inputeditar">
+            <label for="descripcion">Descripción</label>
+            {{ form.descripcion }}
+        </div>
+
+        <div class="inputeditar">
+            <label for="finalizada">Finalizada</label>
+            {{ form.finalizada }}
+        </div>
+
+        <div class="btns-container-editar">
+            <button type="submit">Guardar cambios</button>
+            <a href="{% url 'Mis Notas' %}">Cancelar</a>
+        </div>
+    </form>
+</section>
+{% endblock content %}
