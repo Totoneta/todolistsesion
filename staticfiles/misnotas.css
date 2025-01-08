@@ -1,0 +1,92 @@
+.misnotaspage {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80dvh;
+    height: max-content;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.misnotaspage>h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.notas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0 auto;
+    gap: 1rem;
+    width: 80%;
+}
+
+.nota {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: column;
+    height: 19rem;
+    width: 100%;
+    border-radius: 15px;
+    padding: 1rem;
+    font-size: 20px;
+    background-color: #6c64ffc9;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+.nota>h3 {
+    font-size: 30px;
+    color: #000000;
+}
+
+.nota>p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.container-btns-card {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-btns-card>a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    padding: .8rem 1.2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.container-btns-card>a:hover {
+    scale: 105%;
+}
+
+.container-btns-card>form>button {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    padding: .8rem 1.2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.container-btns-card>form>button:hover {
+    scale: 105%;
+}
