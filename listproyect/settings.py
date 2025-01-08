@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +15,8 @@ SECRET_KEY = 'django-insecure-!!0jali-%@#p8c+)s6d3&#u3-@d!*qw1e1f54x2qyzzsx-al(1
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'todolistsesion-1.onrender.com'
+    'todolistsesion-1.onrender.com',
+    '127.0.0.1',
 ]
 
 
@@ -106,7 +108,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# Directorios de archivos estáticos
+STATIC_URL = '/static/'
+
+# En producción
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Si tienes archivos estáticos específicos para la app, asegúrate de que los directorios sean correctos.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'listapp/static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
